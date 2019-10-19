@@ -4,31 +4,23 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 import java.util.UUID;
 
 /**
- * Created by jt on 2019-04-20.
+ * User: MD.Ahmad
+ * Date: 9/21/2019 3:56 PM
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BeerDto {
-
-    @NotNull
+public class CustomerDto {
     private UUID id;
 
     @NotBlank
-    private String beerName;
-
-    @NotBlank
-    private String beerStyle;
-
-    @Positive
-    private Long upc;
+    @Size(min = 3, max = 100)
+    private  String name;
 }
